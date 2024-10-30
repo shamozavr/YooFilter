@@ -1,0 +1,389 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+html {
+  background-color: white;
+}
+
+img {
+  display: block;
+}
+
+body {
+  width: 335px;
+  height: 600px;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00479C;
+  font-family: 'Factor IO', Helvetica, Arial, sans-serif;
+}
+
+.close {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: white;  
+  background-color: transparent;
+  border: none;
+}
+
+.close:hover {
+  border: 2px solid white;
+  border-radius: 3px;
+}
+
+.close:active {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.logo {
+  margin-top: 25px;
+  padding: 0;
+}
+
+h1 {
+  color: white;
+  font-family: 'Havelock Titling', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  border: solid, white, 2px;
+  border-radius: 20px;
+  padding: 9px 25px;
+}
+
+h2 {
+  color: white;
+  font-family: 'Havelock Titling', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.options {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+}
+
+.tabs__tab {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 0;
+  width: calc(335px / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  cursor: pointer;
+}
+
+.tabs__tab--inactive:hover {
+  background-color: rgba(133, 137, 141, 0.5);
+}
+
+.tabs__tab--inactive:active {
+  background-color: #09152F;
+}
+
+.tabs__tab--active {
+  background-color: #09152F;
+}
+
+.form {
+  width: 100%;
+  background-color: #09152F;
+  color: white;
+}
+
+.option {  
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 25px;
+  min-height: 55px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: rgba(133, 137, 141, 0.5);
+}
+
+.option:active {
+  background-color: rgb(9, 21, 47, 0.5);
+}
+.option:active .option__text {
+  color: white;
+  border-color: white;
+}
+
+.option__wrapper {
+  width: 42px;
+  height: 42px;
+  background-color: #0055BD;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.option__wrapper--closed {
+  background-color: #F00000;
+}
+
+.option__wrapper--test {
+  background-color: #FF9500;
+}
+
+.option__icon {
+  color: white;
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.option__container {
+  flex-grow: 1;
+}
+
+.option__text {
+  margin-left: 15px;
+  user-select: none;
+}
+
+.option__text--closed {
+  padding: 3px 13px;
+  color: #F00000;
+  border: 1px, solid, #F00000;
+  border-radius: 99em;
+}
+
+.option__text--onservice {
+  padding: 3px 13px;
+  color: #FF9500;
+  border: 1px, solid, #FF9500;
+  border-radius: 99em;
+}
+
+.option__text--onboarding {
+  padding: 3px 13px;
+  border: 1px, solid, #ffffff;
+  border-radius: 99em;
+}
+
+input.option__checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  display: grid;
+  place-content: center;
+}
+
+input.option__checkbox::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #00479C;
+}
+
+input.option__checkbox:checked::before {
+  transform: scale(1);
+}
+
+.options__payout {
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options__split {
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.footer__bug-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: help;
+  color: black;
+}
+
+.footer__bug-button:hover {
+  background-color: rgba(133, 137, 141, 0.5);
+}
+
+.footer__bug-button:active {
+  color: white;
+  background-color: #09152F;
+}
+
+.footer__bug-img {
+  width: 30px;
+  height: 37px;
+}
+
+.footer__github-link {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.footer__github-link:visited {
+  color: black;
+}
+
+.footer__github-link:hover {
+  background-color: rgba(133, 137, 141, 0.5);
+}
+
+.footer__github-link:active {
+  color: white;
+  background-color: #09152F;
+}
+
+.footer__github-img {
+  background-size: 35px 35px;
+}
+
+.report {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  height: 375px;
+}
+
+.report__text {
+  display: block;
+  font-family: 'Factor IO', Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 318px;
+  margin: 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background-color: #09152F;
+  font-size: 16px;
+  resize: none;
+  caret-color: white;
+  color: white;
+  
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.report__wrapper {
+  margin: 0;
+  padding: 0;
+  height: 57px;
+  width: 100%;
+  background-color: #00479C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.report__button {
+  font-family: 'Factor IO', Helvetica, Arial, sans-serif;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00479C;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.report__button:hover {
+  background-color: hsla(210, 3%, 54%, 0.502);
+}
+
+.report__button:active {
+  color: white;
+  background-color: #09152F;
+}

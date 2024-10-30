@@ -1,0 +1,25 @@
+{
+  "name": "YooFilter",
+  "description": "extention that filters shops by it's status",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "./favicon_io/favicon-16x16.png",
+    "32": "./favicon_io/favicon-32x32.png",
+    "192": "./favicon_io/android-chrome-192x192.png",
+    "512": "/favicon_io/android-chrome-512x512.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "activeTab", "declarativeContent", "webNavigation"],
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://yookassa.ru/my/*"],
+      "js": ["./js/content.js"]
+    }
+  ]
+}
